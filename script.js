@@ -24,11 +24,14 @@ const dutchWords = [
 let randIndex = Math.floor(Math.random() * arabicWords.length);
 
 const playGame = getAnswer = () =>{
-  let answer = prompt(`What is ${dutchWords[randIndex]} in het Arabisch?`);
+  let answer = '';
+  for(let i = 0; i < dutchWords.length; i++){
+  answer = prompt(`What is ${dutchWords[randIndex]} in het Arabisch?`);
   if(answer === arabicWords[randIndex]){
     alert(`Correct!`);
   } else{
     alert(`Incorrect. The arabic word for ${dutchWords[randIndex]} is ${arabicWords[randIndex]}.`);
   }
-  return randIndex = Math.floor(Math.random() * arabicWords.length); //After the Q&A, generate a new word.
-}
+  randIndex = Math.floor(Math.random() * arabicWords.length); //After the Q&A, generate a new word.
+  }
+  }
