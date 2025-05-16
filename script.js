@@ -30,5 +30,5 @@ const playGame = getAnswer = () =>{
   } else{
     alert(`Incorrect. The arabic word for ${dutchWords[randIndex]} is ${arabicWords[randIndex]}.`);
   }
-  randIndex = Math.floor(Math.random() * arabicWords.length); //After the Q&A, generate a new word.
+  return randIndex = Math.floor(Math.random() * arabicWords.length); //After the Q&A, generate a new word.
 }
