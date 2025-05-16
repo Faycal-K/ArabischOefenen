@@ -28,6 +28,6 @@ const playGame = getAnswer = () =>{
   if(answer === arabicWords[randIndex]){
     alert(`Correct!`);
   } else{
-    alert(`Incorrect!`);
+    alert(`Incorrect. The arabic word for ${dutchWords[randIndex]} is ${arabicWords[randIndex]}.`);
   }
 }
