@@ -3,6 +3,11 @@ const dutchWords = ["Huis", "Moskee", "Lepel"];
 
 const randIndex = Math.floor(Math.random() * arabicWords.length);
 
-console.log(dutchWords[randIndex]);
-
-console.log(prompt("Do you see this?"));
+const playGame = getAnswer = () =>{
+  let answer = prompt(`What is ${dutchWords[randIndex]} in het Arabisch?`);
+  if(answer === arabicWords[randIndex]){
+    alert(`Correct!`);
+  } else{
+    alert(`Incorrect!`);
+  }
+}
