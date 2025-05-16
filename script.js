@@ -21,7 +21,7 @@ const dutchWords = [
   "Het wiel", "Het feest", "Het raam", "Het jaar", "De wijk", "De liniaal", "De gebedsaanheid"
 ];
 
-const randIndex = Math.floor(Math.random() * arabicWords.length);
+let randIndex = Math.floor(Math.random() * arabicWords.length);
 
 const playGame = getAnswer = () =>{
   let answer = prompt(`What is ${dutchWords[randIndex]} in het Arabisch?`);
