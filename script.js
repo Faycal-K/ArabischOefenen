@@ -27,9 +27,8 @@ const playGame = getAnswer = () =>{
   let answer = prompt(`What is ${dutchWords[randIndex]} in het Arabisch?`);
   if(answer === arabicWords[randIndex]){
     alert(`Correct!`);
-    randIndex = Math.floor(Math.random() * arabicWords.length);
   } else{
     alert(`Incorrect. The arabic word for ${dutchWords[randIndex]} is ${arabicWords[randIndex]}.`);
-    randIndex = Math.floor(Math.random() * arabicWords.length);
   }
+  randIndex = Math.floor(Math.random() * arabicWords.length); //After the Q&A, generate a new word.
 }
