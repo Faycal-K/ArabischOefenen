@@ -10,15 +10,15 @@ const arabicWords = [
   "ٱلْعَجَلَةُ", "ٱلْحَفْلُ", "ٱلنَّافِذَةُ", "ٱلسَّنَةُ", "ٱلْحَيُّ", "ٱلْمِسْطَرَةُ", "ٱلرَّكْعَةُ"
 ];
 const dutchWords = [
-  "Rood", "Blauw", "groen", "Zwart", "geel", "Wit",
-  "Baghdad", "Jeddah", "kom (object)", "minuut", "minuten", "sleutel", "sleutels", "zei (hij)", "zei (zij)",
+  "Rood", "Blauw", "Groen", "Zwart", "Geel", "Wit",
+  "Baghdad", "Jeddah", "Kom (object)", "Minuut", "Minuten", "Sleutel", "Sleutels", "zei (hij)", "zei (zij)",
   "Istanbul", "Washington", "Ta'if",
   "Elke", "Elk van hun", "Elke van jullie", "Elke van ons", "De land", "Verschillend", "De bus", "Van hen", "Europa", "Joegoslavië",
-  "De dag", "De prijs", "De helft", "Oud", "De tas (zak)", "De passagier", "De vraag", "Het woord", "Woorden", "Tijdschrift", "Letter(s)",
+  "De dag", "De prijs", "De helft", "Oud", "De tas (zak)", "De passagier", "De vraag", "Het woord", "Woorden", "Tijdschrift", "Letters",
   "Indonesië", "Kamer", "Les", "Oom",
   "Het rivier", "De zee", "De hotel", "De vliegtuig",
   "Het bedrijf", "De directeur van het bedrijf", "Goedkoop", "Japans", "Blouse/garment/shirt",
-  "Het wiel", "Het feest", "Het raam", "Het jaar", "De wijk", "De liniaal", "De gebedsaanheid"
+  "Het wiel", "Het feest", "Het raam", "Het jaar", "De wijk", "De liniaal", "De gebedseenheid"
 ];
 
 let randIndex = Math.floor(Math.random() * arabicWords.length);
@@ -26,11 +26,11 @@ let randIndex = Math.floor(Math.random() * arabicWords.length);
 const playGame = getAnswer = () =>{
   let answer = '';
   for(let i = 0; i < dutchWords.length; i++){
-    answer = prompt(`What is ${dutchWords[randIndex]} in het Arabisch?`);
-    if(answer === arabicWords[randIndex]){
+    answer = prompt(`What is ${arabicWords[randIndex]} in het Arabisch?`);
+    if(answer === dutchWords[randIndex]){
       alert(`Correct!`);
     }else{
-      alert(`Incorrect. The arabic word for ${dutchWords[randIndex]} is ${arabicWords[randIndex]}.`);
+      alert(`Incorrect. De vertaling van ${arabicWords[randIndex]} is ${dutchWords[randIndex]}.`);
   }
   randIndex = Math.floor(Math.random() * arabicWords.length); //After the Q&A, generate a new word.
   }
