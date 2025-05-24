@@ -21,14 +21,14 @@ const dutchWords = [ //Nederlandse woorden
   "Het wiel", "Het feest", "Het raam", "Het jaar", "De wijk", "De liniaal", "De gebedseenheid"
 ];
 
-const generateRandNum = () =>{ //generate a random number
+function generateRandNum() { //generate a random number
   let num = Math.floor(Math.random() * arabicWords.length;
   return num;
 } 
 let randIndex = generateRandNum(); // Generate a random index
 let totalWords = dutchWords.length;
 
-const playGame = () =>{ //Game will be called via a button in the HTML file
+function playGame() { //Game will be called via a button in the HTML file
   let answer = '';
   for(let i = 0; i < totalWords; i++){ //Iterate as much as the array length
     answer = prompt(`Wat is de vertaling van '${arabicWords[randIndex]}'?`); //Question the user
