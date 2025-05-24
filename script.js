@@ -21,11 +21,11 @@ const dutchWords = [ //Nederlandse woorden
   "Het wiel", "Het feest", "Het raam", "Het jaar", "De wijk", "De liniaal", "De gebedseenheid"
 ];
 
-function generateRandNum() { //generate a random number
-  let num = Math.floor(Math.random() * arabicWords.length;
-  return num;
+function generateNum() { //generate a random number
+  return num = Math.floor(Math.random() * arabicWords.length);
+  
 } 
-let randIndex = generateRandNum(); // Generate a random index
+let randIndex = generateNum(); // Generate a random index
 let totalWords = dutchWords.length;
 
 function playGame() { //Game will be called via a button in the HTML file
@@ -37,6 +37,8 @@ function playGame() { //Game will be called via a button in the HTML file
     } else{
       alert(`Incorrect. De vertaling van '${arabicWords[randIndex]}' is '${dutchWords[randIndex]}'.`);
   }
-  randIndex = generateRandNum(). //Generate another random number after each iteration
+  randIndex = generateNum() //Generate another random number after each iteration
   }
   }
+
+playGame();
