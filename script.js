@@ -1,4 +1,4 @@
-const arabicWords = [
+const arabicWords = [ //Arabische woorden
   "أَحْمَرَ", "أَزْرَقَ", "أَخْضَرَ", "أَسْوَدَ", "أَصْفَرَ", "أَبْيَضَ",
   "بَغْدَادُ", "جِدَّةُ", "كَوْنٌ", "دَقِيقَةٌ", "دَقَائِقُ", "مِفْتَاحٌ", "مَفَاتِيحُ", "قَالَ", "قَالَتْ",
   "إِصْطَنْبُولُ", "وَاشِنْطُنْ", "الطَّائِفُ",
@@ -9,29 +9,34 @@ const arabicWords = [
   "ٱلشَّرِكَةُ", "مُدِيرُ ٱلشَّرِكَةِ", "رَخِيصٌ", "يَابَانِيَّةٌ", "قَمِيصٌ",
   "ٱلْعَجَلَةُ", "ٱلْحَفْلُ", "ٱلنَّافِذَةُ", "ٱلسَّنَةُ", "ٱلْحَيُّ", "ٱلْمِسْطَرَةُ", "ٱلرَّكْعَةُ"
 ];
-const dutchWords = [
+const dutchWords = [ //Nederlandse woorden
   "Rood", "Blauw", "Groen", "Zwart", "Geel", "Wit",
-  "Baghdad", "Jeddah", "Kom (object)", "Minuut", "Minuten", "Sleutel", "Sleutels", "zei (hij)", "zei (zij)",
+  "Baghdad", "Jeddah", "Kom (object)", "Minuut", "Minuten", "Sleutel", "Sleutels", "Hij zei", "Zij zei",
   "Istanbul", "Washington", "Ta'if",
-  "Elke", "Elk van hun", "Elke van jullie", "Elke van ons", "De land", "Verschillend", "De bus", "Van hen", "Europa", "Joegoslavië",
-  "De dag", "De prijs", "De helft", "Oud", "De tas (zak)", "De passagier", "De vraag", "Het woord", "Woorden", "Tijdschrift", "Letters",
+  "Elke", "Elke van hun", "Elke van jullie", "Elke van ons", "De land", "Verschillend", "De bus", "Van hen", "Europa", "Joegoslavië",
+  "De dag", "De prijs", "De helft", "Oud", "De tas", "De passagier", "De vraag", "Het woord", "Woorden", "Tijdschrift", "Letters",
   "Indonesië", "Kamer", "Les", "Oom",
   "Het rivier", "De zee", "De hotel", "De vliegtuig",
   "Het bedrijf", "De directeur van het bedrijf", "Goedkoop", "Japans", "Blouse/garment/shirt",
   "Het wiel", "Het feest", "Het raam", "Het jaar", "De wijk", "De liniaal", "De gebedseenheid"
 ];
 
-let randIndex = Math.floor(Math.random() * arabicWords.length);
+const generateRandNum = () =>{ //generate a random number
+  let num = Math.floor(Math.random() * arabicWords.length;
+  return num;
+} 
+let randIndex = generateRandNum(); // Generate a random index
+let totalWords = dutchWords.length;
 
-const playGame = getAnswer = () =>{
+const playGame = () =>{ //Game will be called via a button in the HTML file
   let answer = '';
-  for(let i = 0; i < dutchWords.length; i++){
-    answer = prompt(`Wat is de vertaling van '${arabicWords[randIndex]}'?`);
-    if(answer.toLowerCase() === dutchWords[randIndex].toLowerCase()){
+  for(let i = 0; i < totalWords; i++){ //Iterate as much as the array length
+    answer = prompt(`Wat is de vertaling van '${arabicWords[randIndex]}'?`); //Question the user
+    if(answer.toLowerCase() === dutchWords[randIndex].toLowerCase()){ //Check answer
       alert(`Correct!`);
-    }else{
+    } else{
       alert(`Incorrect. De vertaling van '${arabicWords[randIndex]}' is '${dutchWords[randIndex]}'.`);
   }
-  randIndex = Math.floor(Math.random() * arabicWords.length); //After the Q&A, generate a new word.
+  randIndex = generateRandNum(). //Generate another random number after each iteration
   }
   }
