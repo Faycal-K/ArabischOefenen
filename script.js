@@ -27,7 +27,7 @@ const playGame = getAnswer = () =>{
   let answer = '';
   for(let i = 0; i < dutchWords.length; i++){
     answer = prompt(`Wat is de vertaling van '${arabicWords[randIndex]}'?`);
-    if(answer === dutchWords[randIndex]){
+    if(answer.toLowerCase() === dutchWords[randIndex].toLowerCase()){
       alert(`Correct!`);
     }else{
       alert(`Incorrect. De vertaling van '${arabicWords[randIndex]}' is '${dutchWords[randIndex]}'.`);
