@@ -13,7 +13,7 @@ const dutchWords = [ //Nederlandse woorden
   "Rood", "Blauw", "Groen", "Zwart", "Geel", "Wit",
   "Baghdad", "Jeddah", "Kom (object)", "Minuut", "Minuten", "Sleutel", "Sleutels", "Hij zei", "Zij zei",
   "Istanbul", "Washington", "Ta'if",
-  "Elke", "Elke van hun", "Elke van jullie", "Elke van ons", "De land", "Verschillend", "De bus", "Van hen", "Europa", "Joegoslavië",
+  "Elke", "Elke van hun", "Elke van jullie", "Elke van ons", "De land", "Verschillend", "De bus", "Van haar", "Europa", "Joegoslavië",
   "De dag", "De prijs", "De helft", "Oud", "De tas", "De passagier", "De vraag", "Het woord", "Woorden", "Tijdschrift", "Letters",
   "Indonesië", "Kamer", "Les", "Oom",
   "Het rivier", "De zee", "De hotel", "De vliegtuig",
@@ -41,4 +41,4 @@ function playGame() { //Game will be called via a button in the HTML file
   }
   }
 
-playGame();
+console.log(arabicWords[25])
