@@ -186,6 +186,7 @@ const arabicWords = [
   "الفِنْجَانُ",
   "الفَنَاجِينُ",
   "مَنَادِيلُ",
+  "الفنادق",
 ];
 
 const dutchWords = [
@@ -374,6 +375,7 @@ const dutchWords = [
   "de kom",
   "de kommen",
   "servetten/doekjes",
+  "De hotels",
 ];
 
 function generateNum() {
@@ -385,11 +387,18 @@ let totalWords = dutchWords.length;
 
 function playGame() {
   //Game will be called via a button in the HTML file
-  let answer = "";
   for (let i = 0; i < totalWords; i++) {
     //Iterate as much as the array length
-    answer = prompt(`Wat is de vertaling van '${arabicWords[randIndex]}'?`); //Question the user
-    if (answer.toLowerCase() === dutchWords[randIndex].toLowerCase()) {
+    let userAnswer = prompt(
+      `Wat is de vertaling van '${arabicWords[randIndex]}'?`
+    ).toLowerCase(); //Question the user and transform to lowercase letters
+    correctAnswer = dutchWords[randIndex].toLowerCase(); //transfer correct answer to lowercase letters
+    if (userAnswer === "") {
+      return alert(
+        `Je hebt niks ingevuld. Het antwoord moest zijn: ${dutchWords[randIndex]}`
+      );
+    }
+    if (correctAnswer.includes(userAnswer)) {
       //Check answer
       alert(`Correct!`);
     } else {
