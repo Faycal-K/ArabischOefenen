@@ -1,0 +1,63 @@
+* {
+  font-size: 16px;
+  font-family: "Andale Mono";
+}
+
+body {
+  background-color: #d5f7f6;
+}
+
+h1 {
+  font-size: clamp(2rem, calc(3vw + 1rem), 5rem);
+  text-align: center;
+}
+
+p,
+span,
+li {
+  font-size: clamp(1.05rem, 2vw, 2rem);
+}
+
+input,
+button {
+  font-size: clamp(1rem, 2vw, 2rem);
+  margin-bottom: clamp(1rem, 2vw, 2rem);
+}
+
+.big-word {
+  font-size: 1.5rem;
+}
+
+.thick {
+  font-weight: 800;
+}
+
+#result ul {
+  list-style: none;
+}
+
+#game-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#question,
+#user-answer,
+#next-question,
+#incorrect,
+#correct {
+  display: none;
+}
+
+#correct img,
+#incorrect img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#correct,
+#incorrect {
+  margin: 0;
+  padding: 0;
+}

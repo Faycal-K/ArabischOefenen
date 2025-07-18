@@ -382,33 +382,57 @@ function generateNum() {
   //generate a random number
   return (num = Math.floor(Math.random() * arabicWords.length));
 }
-let randIndex = generateNum(); // Generate a random index
-let totalWords = dutchWords.length;
+
+//Saving elements as variables
+let arabicWord = document.getElementById("arabic-word");
+let userAnswer = document.getElementById("user-answer");
+let result = document.getElementById("result");
+let question = document.getElementById("question");
+let startGame = document.getElementById("start-game");
+let nextQuestion = document.getElementById("next-question");
+let correct = document.getElementById("correct");
+let incorrect = document.getElementById("incorrect");
+
+//Generate random index
+let randIndex = generateNum();
 
 function playGame() {
   //Game will be called via a button in the HTML file
-  for (let i = 0; i < totalWords; i++) {
-    //Iterate as much as the array length
-    let userAnswer = prompt(
-      `Wat is de vertaling van '${arabicWords[randIndex]}'?`
-    ).toLowerCase(); //Question the user and transform to lowercase letters
-    correctAnswer = dutchWords[randIndex].toLowerCase(); //transfer correct answer to lowercase letters
-    if (userAnswer === "") {
-      return alert(
-        `Je hebt niks ingevuld. Het antwoord moest zijn: ${dutchWords[randIndex]}`
-      );
-    }
-    if (correctAnswer.includes(userAnswer)) {
-      //Check answer
-      alert(`Correct!`);
-    } else {
-      alert(
-        `Incorrect. De vertaling van '${arabicWords[randIndex]}' is '${dutchWords[randIndex]}'.`
-      );
-    }
-    randIndex = generateNum(); //Generate another random number after each iteration
-  }
+  arabicWord.innerHTML = arabicWords[randIndex]; //Display a random Arabic Word
+
+  //Show the elements needed to play the game
+  question.style.display = "block";
+  userAnswer.style.display = "block";
+  nextQuestion.style.display = "block";
+
+  //Hide the start game button since the game is started already
+  startGame.style.display = "none";
 }
 
-console.log(arabicWords.length);
-console.log(dutchWords.length);
+function next() {
+  //This functions compares answers, output result and loads the next question
+  let currentUserAnswer = userAnswer.value.toLowerCase(); //Save current user's answer
+  correctAnswer = dutchWords[randIndex].toLowerCase(); //Save correct answer
+
+  //Check if answer is correct
+  if (currentUserAnswer === correctAnswer) {
+    correct.style.display = "block";
+    incorrect.style.display = "none";
+  } else {
+    correct.style.display = "none";
+    incorrect.style.display = "block";
+  }
+
+  //Output the question, user's answer and correct answer
+  result.innerHTML = `
+  <ul>
+  <li>Vorige vraag: <span class="thick big-word">${arabicWords[randIndex]}</span></li>
+  <li>Je antwoord: <span class ="thick">${currentUserAnswer}</span></li>
+  <li>Juiste antwoord: <span class="thick">${correctAnswer}</span></li>
+  </ul>
+  `;
+
+  randIndex = generateNum(); //Generate another random index after each question
+  userAnswer.value = ""; //Clear input field after each question
+  arabicWord.innerHTML = arabicWords[randIndex]; //Display next question
+}
