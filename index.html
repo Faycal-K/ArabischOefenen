@@ -10,19 +10,29 @@
     <main id="game-body">
       <h1>Arabische Woorden</h1>
       <p id="question">
+        <!--Question will be displayed when user presses start-->
         Wat betekent <span id="arabic-word" class="big-word"></span> ?
       </p>
 
+      <!--Input field will be displayed when user presses start-->
       <input type="text" id="user-answer" name="user-answer" />
+
       <p id="incorrect">
+        <!--Will be displayed when answer is incorrect-->
         <img src="img/incorrect.png" alt="incorrect logo" /> Incorrect!
       </p>
       <p id="correct">
+        <!--Will be displayed when answer is correct-->
         <img src="img/correct.png" alt="correct logo" /> Correct!
       </p>
+
+      <!--Result will be filled through Javascript functions-->
       <div id="result"></div>
 
+      <!--Button to start the game-->
       <button id="start-game" onclick="playGame()">Start</button>
+
+      <!--Button to go the next question-->
       <button id="next-question" onclick="next()">Volgende</button>
     </main>
     <script src="script.js"></script>

@@ -14,10 +14,10 @@ I want to make a game so I can learn and memorise Arabic words easily on any dev
 - The correct answer(s)
 
 5. Output the next word
-6. Display a button so the user can display the necessary information to play the game correctly, like:
+6. Display a button so the user can view game information, like:
 
 - Game is not case sensitive
-- Multiple answers acceptable
 - Display how many words there are currently
 
-7. Points 1 and 4 must be outputted clearly. The text has to be readable
+7. Points 1 and 4 must be outputted clearly on different screens. The text has to be readable
+8. Some words must contain multiple correct meanings if necessary
